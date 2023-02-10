@@ -113,9 +113,13 @@
     cursor: pointer;
     padding: 0.5rem 0.5rem;
     border-radius: 0.3rem;
-    
     font-weight: var(--bold);
     color: var(--DesaturatedDarkCyan);
     background-color: var(--LightGrayishCyanBackground);
+    transition: all .3s;
+    &:hover{
+      color:#fff;
+      background-color: var(--DesaturatedDarkCyan);
+    }
   }
 }
