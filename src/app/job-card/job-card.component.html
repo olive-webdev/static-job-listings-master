@@ -1,0 +1,33 @@
+<div class="card" [ngClass]="{ 'border-featured': job.featured }">
+  <div class="content">
+    <div
+      class="content-image"
+      [ngStyle]="{
+        backgroundImage: 'url(assets' + job.logo.substring(1) + ')'
+      }"
+    ></div>
+    <div class="content-informations">
+      <div class="company" [ngClass]="{ new: job.new }">
+        <span>{{ job.company }}</span>
+        <span class="new" *ngIf="job.new">NEW!</span>
+        <span class="featured" *ngIf="job.featured">FEATURED</span>
+      </div>
+      <span class="position">{{ job.position }}</span>
+      <div class="spec">
+        <span>{{ job.postedAt }}</span>
+        <span>{{ job.contract }}</span>
+        <span>{{ job.location }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="tags">
+    <span class="tag" (click)="selectTag(job.role)">{{ job.role }}</span>
+    <span class="tag" (click)="selectTag(job.level)">{{ job.level }}</span>
+    <ng-container *ngFor="let item of job.languages">
+      <span class="tag" (click)="selectTag(item)">{{ item }}</span>
+    </ng-container>
+    <ng-container *ngFor="let item of job.tools">
+      <span class="tag" (click)="selectTag(item)">{{ item }}</span>
+    </ng-container>
+  </div>
+</div>

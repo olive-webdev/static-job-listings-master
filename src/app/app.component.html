@@ -1,0 +1,16 @@
+<header>
+</header>
+<main>
+    <section id="tags" *ngIf="filter.length !== 0">
+        <div id="tags-container">
+            <span *ngFor="let item of filter">
+                {{item}}
+                <button (click)="removeTag(item)"></button>
+            </span>
+        </div>
+        <button (click)="eraseAllTags()">Clear</button>
+    </section>
+    <section id="container" @inOutAnimation>
+        <app-job-card [@inOutAnimation]="'in'" *ngFor="let job of Jobs | filter: filter; index as i; trackBy:identify" [job]="job"></app-job-card>
+    </section>
+</main>
