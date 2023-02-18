@@ -107,3 +107,133 @@ main {
     }
   }
 }
+
+
+.card {
+  padding: 1.25rem;
+  background-color: white;
+  display: grid;
+  row-gap: 1.25rem;
+  grid-template-columns: auto 1fr;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 767px) {
+    gap: 1rem;
+  }
+  @media (max-width: 576px) {
+    padding-top: 2rem;
+  }
+  border-radius: 0.4rem;
+  box-shadow: var(--VeryDarkGrayishCyanShadow) 0px 20px 25px -5px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+  position: relative;
+  @media (max-width: 576px) {
+    gap: 0;
+  }
+  &-image {
+    grid-row: 1 / -1;
+    height: 5.5rem;
+    width: 5.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (max-width: 576px) {
+      position: absolute;
+      height: 3rem;
+      width: 3rem;
+      top: -3.5rem;
+    }
+  }
+  &-informations {
+    display: grid;
+    gap: 1rem;
+    @media (max-width: 576px) {
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+}
+
+.border-featured {
+  border-left: 5px solid var(--DesaturatedDarkCyan);
+}
+
+.company {
+  color: var(--DesaturatedDarkCyan);
+  font-weight: var(--bold);
+  position: relative;
+  display: block;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  & .new,
+  & .featured {
+    font-size: .75rem;
+    line-height: .75rem;
+    font-weight: var(--medium);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 1.6rem;
+  }
+  & .new {
+    background-color: var(--DesaturatedDarkCyan);
+  }
+  & .featured {
+    background-color: black;
+  }
+}
+
+.position {
+  font-weight: var(--bold);
+}
+
+.spec {
+  & span {
+    color: var(--DarkGrayishCyan);
+    position: relative;
+    &:not(:last-child) {
+      margin-right: 1rem;
+      &::after {
+        content: "•";
+        position: absolute;
+        top: 0.15rem;
+        right: -1rem;
+      }
+    }
+    &:not(:first-child) {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.tags {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-start;
+  justify-self: right;
+  flex-wrap: wrap;
+  @media (max-width: 576px) {
+    justify-self: left;
+  }
+  & .tag {
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.3rem;
+    font-weight: var(--bold);
+    color: var(--DesaturatedDarkCyan);
+    background-color: var(--LightGrayishCyanBackground);
+    transition: all .3s;
+    &:hover{
+      color:#fff;
+      background-color: var(--DesaturatedDarkCyan);
+    }
+  }
+}
+

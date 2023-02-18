@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Job } from '../interfaces/job'
 import { DataService } from '../services/data.service'
 
@@ -6,15 +6,11 @@ import { DataService } from '../services/data.service'
   selector: 'app-job-card',
   templateUrl: './job-card.component.html',
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./job-card.component.scss']
 })
-export class JobCardComponent implements OnInit{
+export class JobCardComponent{
   @Input() job!: Job
 
   constructor(private data: DataService) { }
-  
-  ngOnInit(): void {
-  }
 
   selectTag(tag: string) {
     if (!this.data.filter.value.includes(tag)) {

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core'
 import { DataService } from './services/data.service'
 import { Job } from './interfaces/job'
-import { trigger, transition, query, style, stagger, animate, state, keyframes } from '@angular/animations'
+import { trigger, transition, style, animate, keyframes } from '@angular/animations'
 
 
 @Component({
