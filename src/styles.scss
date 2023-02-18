@@ -73,6 +73,9 @@ main {
       gap: 1rem;
       position: relative;
       overflow: hidden;
+      & span{
+        flex-shrink: 0;
+      }
       & button {
         position: absolute;
         cursor: pointer;
